@@ -1,0 +1,114 @@
+import time
+import random
+import sys
+
+enemy3 = "The all powerfull king"
+
+
+my_inventory = ["Sacret Sword", "Flames explotion", "Healing spell","Sword of the Gods"]
+choiceNeed1 = ["A", "B", "C"]
+choiceNeed2 = ["I", "/"]
+def printtext(words):
+    for charac in words:
+        print(charac, end ='')
+        time.sleep(0.011)
+    print()
+
+printtext("The world is made of two types of humans: the originals and the awakened ones. This all happened when all of the pocket dimensions started to pop up. Slowly superhumans started to show up out of nowhere. Special abilities were granted to those who were now awakened. Just like the games they would play it has now become severals new reality. Sadly for them they do not grow endlessly such as those characters you are always so used to. All awakened people are now graded by their power and their power levels.")
+printtext("Good luck awakened one")
+    
+player_health = random.randint(10, 20)
+print("This is your health", player_health)
+enemy_health = random.randint(10, 20)
+
+running = True
+while running:
+
+    enemy1 = "Undead army soldier"
+    print(enemy1, "attacks")
+    enemy_attack = random.randint(1, 20)
+    print("enemy", enemy1, "deals", enemy_attack, "damage")
+
+    player_health -=enemy_attack
+    if player_health > 0:
+        print("player has", player_health, "health left")
+        player_attack = random.randint(10, 30)
+        print ("enemy has", enemy_health, "health")
+        enemy_health -= player_attack
+        print("you have done", player_attack, "damage")
+        if enemy_health < 0 :
+            print("enemy health is 0")
+            running = False
+    else:
+        print("player health has reached 0 you loose")
+        running = False
+enemy2 = "Undead general"
+print(enemy2, "attacks")
+enemy_attack = random.randint(30, 40)
+
+player_health =- enemy_attack
+print(player_health)
+print("You have died")
+
+print("what is this I thought I just died!! Where am I.")
+print("Someone has walked in the room")
+print("What will you say", "Will you chose A where am I", "B Who are You, or C ATTACK")
+running = True
+while running:
+    userThrow = input(">> ")
+    if userThrow =="A":
+        print("You are in the hunters cabin are you alright")
+        running = False
+    elif userThrow == "B":
+        print("Im the quest giver have you already forgotten")
+        running = False
+    elif userThrow == "C":
+        print("<You are fliped in the air and restrianed>", "Are you insaine are you trying me with how weak you are")
+        running = False
+    else:
+        print("Try agian")
+
+print("After having a good conversation with this person you finaly calm.")
+print("You walk out and have a menu screen pop up")
+player_health = random.randint (10, 20)
+print(">>You have a chance to claim a wepon for free")
+
+print("Pick a number between 0 and 9")
+print("If you quess right you get a wepon")
+userThrow = input(">>")
+print(userThrow)
+cpuThrow = random.choice("123456789")
+print(cpuThrow)
+
+if cpuThrow == userThrow:
+    print("You win!! Now you get the splintered bat.")
+    my_inventory.append("splintered bat")
+elif cpuThrow != userThrow:
+    print("Too bad!")
+
+print("Would you like to check what items you have recived from the previous win!", "press I to check what is recived, press / to keep going")
+running = True
+while running:
+    userThrow = input(">>")
+    if userThrow == "I":
+        print("You have gained a fearce dragon cub, a theifs healing potion, and a greatsword")
+        my_inventory.append("fearce dragon cub")
+        my_inventory.append("a theives poison potion")
+        my_inventory.append("a greatsword")
+        break
+    if userThrow =="/":
+        print("okay")
+        break
+    else :
+        print("Try agian")
+        
+print("Which way would you like to go", "N, E, W, or S")
+running = True
+while running:
+    userThrow = input(">>")
+    if userThrow == "N":
+        print("next level")
+        running = False
+    else:
+        print("Can't go that way try agian")
+
